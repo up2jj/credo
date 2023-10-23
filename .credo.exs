@@ -52,6 +52,11 @@
       #
       parse_timeout: 5000,
       #
+      # By default parse timeout will not halt execution and return 0 exit code
+      # If you need a stricter behaviour, then change `false` to `true` below:
+      #
+      halt_on_parse_timeout: false,
+      #
       # If you want to use uncolored output by default, you can change `color`
       # to `false` below:
       #

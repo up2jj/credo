@@ -28,6 +28,7 @@ defmodule Credo.Execution do
             requires: [],
             plugins: [],
             parse_timeout: 5000,
+            halt_on_parse_timeout: false,
             strict: false,
 
             # options, set by the command line

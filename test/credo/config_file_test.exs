@@ -484,6 +484,7 @@ defmodule Credo.ConfigFileTest do
     assert is_boolean(result.color)
     assert is_boolean(result.strict)
     assert is_integer(result.parse_timeout)
+    assert is_boolean(result.halt_on_parse_timeout)
     assert is_list(result.files.included)
     assert not Enum.empty?(result.files.included)
     assert is_list(result.files.excluded)

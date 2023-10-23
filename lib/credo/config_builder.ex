@@ -44,7 +44,8 @@ defmodule Credo.ConfigBuilder do
         checks: config_file.checks,
         requires: config_file.requires,
         plugins: config_file.plugins,
-        parse_timeout: config_file.parse_timeout
+        parse_timeout: config_file.parse_timeout,
+        halt_on_parse_timeout: config_file.halt_on_parse_timeout
     }
   end
 

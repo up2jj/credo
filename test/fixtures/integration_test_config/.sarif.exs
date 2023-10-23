@@ -9,6 +9,7 @@
       requires: [],
       strict: false,
       parse_timeout: 5000,
+      halt_on_parse_timeout: false,
       color: false,
       checks: [
         {

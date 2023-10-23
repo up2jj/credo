@@ -26,6 +26,7 @@ defmodule Credo.ConfigFile do
             requires: [],
             plugins: [],
             parse_timeout: nil,
+            halt_on_parse_timeout: false,
             strict: false
 
   @doc """
@@ -142,6 +143,7 @@ defmodule Credo.ConfigFile do
         excluded: merge_files_default(@default_files_excluded, config.files.excluded)
       },
       parse_timeout: merge_parse_timeout(@default_parse_timeout, config.parse_timeout),
+      halt_on_parse_timeout: config.halt_on_parse_timeout,
       plugins: config.plugins || [],
       requires: config.requires || [],
       strict: merge_boolean(@default_strict, config.strict)
@@ -203,6 +205,7 @@ defmodule Credo.ConfigFile do
       color: data[:color],
       files: files_from_data(data, dir),
       parse_timeout: data[:parse_timeout],
+      halt_on_parse_timeout: data[:halt_on_parse_timeout],
       plugins: data[:plugins] || [],
       requires: data[:requires] || [],
       strict: data[:strict]
@@ -325,6 +328,7 @@ defmodule Credo.ConfigFile do
       color: merge_boolean(base.color, other.color),
       files: merge_files(base, other),
       parse_timeout: merge_parse_timeout(base.parse_timeout, other.parse_timeout),
+      halt_on_parse_timeout: merge_boolean(base.halt_on_parse_timeout, other.halt_on_parse_timeout),
       plugins: base.plugins ++ other.plugins,
       requires: base.requires ++ other.requires,
       strict: merge_boolean(base.strict, other.strict)
